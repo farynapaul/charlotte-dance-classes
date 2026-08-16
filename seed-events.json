@@ -175,5 +175,82 @@
     "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
     "status": "approved",
     "audience": "kids"
+  },
+  {
+    "name": "Jazz Classes (Beginner Level)",
+    "styles": ["more"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "PRO Style Choreo (Advanced Level)",
+    "styles": ["more"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "8:05 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "PRO Style Choreo (Advanced Level)",
+    "styles": ["more"],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "PRO Style Choreo (Advanced Level)",
+    "styles": ["more"],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "AfroSass (Intermediate Level)",
+    "styles": ["more"],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "8:05 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Contemporary (Intermediate Level)",
+    "styles": ["more"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "\"Tease\" Heels (Beginner Level)",
+    "styles": ["more"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
   }
 ]
