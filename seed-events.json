@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Salsa On2 Foundations",
+    "styles": ["salsa"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "Viva Collective Studios, 901 N Tryon St",
+    "link": "https://www.rumbaolatindance.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Bachata Basics",
+    "styles": ["bachata"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "8:00 PM",
+    "venue": "Viva Collective Studios, 901 N Tryon St",
+    "link": "https://www.rumbaolatindance.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Rumbao Classes",
+    "styles": ["salsa", "bachata"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "YVY Camp North End, 1701 N Graham St",
+    "link": "https://www.rumbaolatindance.com/",
+    "status": "approved"
+  },
+  {
+    "name": "RW Latin Dance — Class Schedule",
+    "styles": ["salsa", "bachata", "tango"],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "See site for current times",
+    "venue": "The Dance Loft, 756 Tyvola Rd Suite 734",
+    "link": "https://rwlatindance.com/",
+    "status": "approved"
+  },
+  {
+    "name": "CLTDance Class + Social",
+    "styles": ["salsa", "bachata"],
+    "day": "Sun",
+    "type": "recurring",
+    "time": "4:00 PM class / social to 6:30 PM",
+    "venue": "Lenny Boy Brewing Co.",
+    "link": "https://www.cltdance.com/",
+    "status": "approved"
+  }
+]

@@ -1,0 +1,7 @@
+.claude/
+files.zip
+*.pyc
+__pycache__/
+*serviceAccountKey*.json
+*firebase-adminsdk*.json
+.env

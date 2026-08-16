@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit an event — Charlotte Dance Classes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1512; --paper:#efe6d3; --wine:#7a1533; --wine-deep:#5c0f26;
+    --line: rgba(28,21,18,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',sans-serif;}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;margin:0 0 8px;}
+  main{max-width:560px;margin:0 auto;padding:64px 24px 100px;}
+  a.back{font-size:13px;color:var(--wine);text-decoration:none;font-weight:600;}
+  p.sub{color:rgba(28,21,18,0.65);margin:0 0 36px;}
+  label{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;font-weight:600;margin:22px 0 8px;}
+  input[type=text], input[type=url], select{
+    width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;
+    font-family:'Space Grotesk',sans-serif;font-size:15px;color:var(--ink);border-radius:2px;
+  }
+  .styles-check{display:flex;flex-wrap:wrap;gap:8px;}
+  .styles-check label{
+    display:inline-flex;align-items:center;gap:6px;margin:0;font-weight:500;text-transform:none;
+    letter-spacing:0;font-size:14px;border:1px solid var(--line);padding:8px 12px;border-radius:999px;cursor:pointer;
+  }
+  .styles-check input{width:auto;}
+  .row{display:flex;gap:12px;}
+  .row > div{flex:1;}
+  button{
+    margin-top:32px;width:100%;padding:16px;background:var(--wine);color:var(--paper);
+    border:none;font-weight:600;font-size:15px;cursor:pointer;letter-spacing:0.3px;
+  }
+  button:hover{background:var(--wine-deep);}
+  button:disabled{opacity:0.5;cursor:default;}
+  .note{font-size:13px;color:rgba(28,21,18,0.55);margin-top:14px;}
+  .success{
+    text-align:center;padding:60px 20px;
+  }
+  .success h1{margin-bottom:16px;}
+  .hidden{display:none;}
+</style>
+</head>
+<body>
+<main>
+  <a class="back" href="index.html">← Back to calendar</a>
+
+  <div id="form-view">
+    <h1 style="margin-top:20px;">Add your event</h1>
+    <p class="sub">Submissions are reviewed before they go live, usually within a few days.</p>
+
+    <form id="event-form">
+      <label>Event name</label>
+      <input type="text" id="name" required placeholder="e.g. Bachata Basics">
+
+      <label>Dance style(s)</label>
+      <div class="styles-check">
+        <label><input type="checkbox" name="style" value="salsa"> Salsa</label>
+        <label><input type="checkbox" name="style" value="bachata"> Bachata</label>
+        <label><input type="checkbox" name="style" value="zouk"> Zouk</label>
+        <label><input type="checkbox" name="style" value="kizomba"> Kizomba</label>
+        <label><input type="checkbox" name="style" value="tango"> Tango</label>
+        <label><input type="checkbox" name="style" value="swing"> Swing</label>
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Day of week</label>
+          <select id="day" required>
+            <option value="">Select…</option>
+            <option>Sun</option><option>Mon</option><option>Tue</option>
+            <option>Wed</option><option>Thu</option><option>Fri</option><option>Sat</option>
+          </select>
+        </div>
+        <div>
+          <label>Type</label>
+          <select id="type" required>
+            <option value="recurring">Recurring weekly</option>
+            <option value="oneoff">One-time event</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Time</label>
+      <input type="text" id="time" required placeholder="e.g. 8:00 PM">
+
+      <label>Venue</label>
+      <input type="text" id="venue" required placeholder="e.g. Viva Collective Studios">
+
+      <label>Link for more info</label>
+      <input type="url" id="link" required placeholder="https://…">
+
+      <label>Your email (not shown publicly — in case we have questions)</label>
+      <input type="text" id="submitterEmail" required placeholder="you@email.com">
+
+      <button type="submit" id="submit-btn">Submit for review</button>
+      <p class="note" id="error-note"></p>
+    </form>
+  </div>
+
+  <div id="success-view" class="success hidden">
+    <h1>Got it.</h1>
+    <p class="sub">Thanks — this will show up on the calendar once it's reviewed.</p>
+    <a class="back" href="index.html">← Back to calendar</a>
+  </div>
+</main>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { firebaseConfig } from "./firebase-config.js";
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  document.getElementById("event-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById("submit-btn");
+    const errNote = document.getElementById("error-note");
+    btn.disabled = true;
+    btn.textContent = "Submitting…";
+    errNote.textContent = "";
+
+    const styles = Array.from(document.querySelectorAll('input[name="style"]:checked')).map(cb => cb.value);
+
+    if(styles.length === 0){
+      errNote.textContent = "Pick at least one dance style.";
+      btn.disabled = false;
+      btn.textContent = "Submit for review";
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "events"), {
+        name: document.getElementById("name").value.trim(),
+        styles,
+        day: document.getElementById("day").value,
+        type: document.getElementById("type").value,
+        time: document.getElementById("time").value.trim(),
+        venue: document.getElementById("venue").value.trim(),
+        link: document.getElementById("link").value.trim(),
+        submitterEmail: document.getElementById("submitterEmail").value.trim(),
+        status: "pending",
+        createdAt: serverTimestamp()
+      });
+      document.getElementById("form-view").classList.add("hidden");
+      document.getElementById("success-view").classList.remove("hidden");
+    } catch(err){
+      console.error(err);
+      errNote.textContent = "Something went wrong submitting this — try again in a moment.";
+      btn.disabled = false;
+      btn.textContent = "Submit for review";
+    }
+  });
+</script>
+</body>
+</html>

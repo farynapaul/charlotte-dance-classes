@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Charlotte Dance Classes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1512; --paper:#efe6d3; --wine:#7a1533; --wine-deep:#5c0f26; --coral:#e85d4c; --teal:#2c6e68;
+    --line: rgba(28,21,18,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:'Space Grotesk',sans-serif;}
+  h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:34px;margin:0 0 4px;}
+  main{max-width:760px;margin:0 auto;padding:56px 24px 100px;}
+  .login-box{max-width:360px;margin:80px auto;text-align:center;}
+  input{
+    width:100%;padding:12px 14px;border:1px solid var(--line);background:#fff;
+    font-family:'Space Grotesk',sans-serif;font-size:15px;margin-bottom:10px;border-radius:2px;
+  }
+  button{
+    padding:12px 22px;background:var(--wine);color:var(--paper);border:none;
+    font-weight:600;cursor:pointer;font-size:14px;
+  }
+  button:hover{background:var(--wine-deep);}
+  button.reject{background:transparent;color:var(--ink);border:1px solid var(--line);}
+  button.reject:hover{background:#fff;}
+  .top-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;}
+  .sign-out{font-size:13px;color:var(--wine);background:none;border:none;cursor:pointer;padding:0;font-weight:600;}
+  .card{
+    border:1px solid var(--line);padding:20px;margin-bottom:14px;background:rgba(255,255,255,0.4);
+  }
+  .card h3{margin:0 0 6px;font-family:'Instrument Serif',serif;font-weight:400;font-size:22px;}
+  .card p{margin:0 0 4px;font-size:14px;color:rgba(28,21,18,0.7);}
+  .card .tags{margin:10px 0;font-size:12px;text-transform:uppercase;letter-spacing:0.5px;color:var(--teal);font-weight:600;}
+  .actions{display:flex;gap:10px;margin-top:14px;}
+  .empty{text-align:center;padding:60px 20px;color:rgba(28,21,18,0.55);}
+  .error{color:var(--coral);font-size:13px;margin-top:6px;}
+</style>
+</head>
+<body>
+
+<div id="login-view" class="login-box">
+  <h1>Admin</h1>
+  <p style="color:rgba(28,21,18,0.6);margin-bottom:26px;">Sign in to review submissions.</p>
+  <input type="text" id="email" placeholder="Email">
+  <input type="password" id="password" placeholder="Password">
+  <button id="login-btn" style="width:100%;">Sign in</button>
+  <p class="error" id="login-error"></p>
+</div>
+
+<main id="admin-view" style="display:none;">
+  <div class="top-row">
+    <h1>Pending submissions</h1>
+    <button class="sign-out" id="signout-btn">Sign out</button>
+  </div>
+  <div id="pending-list"></div>
+</main>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import {
+    getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import {
+    getFirestore, collection, query, where, getDocs, doc, updateDoc, deleteDoc
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { firebaseConfig } from "./firebase-config.js";
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  const loginView = document.getElementById("login-view");
+  const adminView = document.getElementById("admin-view");
+
+  document.getElementById("login-btn").addEventListener("click", async () => {
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const errEl = document.getElementById("login-error");
+    errEl.textContent = "";
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+    } catch(err){
+      errEl.textContent = "Couldn't sign in — check the email and password.";
+    }
+  });
+
+  document.getElementById("signout-btn").addEventListener("click", () => signOut(auth));
+
+  onAuthStateChanged(auth, (user) => {
+    if(user){
+      loginView.style.display = "none";
+      adminView.style.display = "block";
+      loadPending();
+    } else {
+      loginView.style.display = "block";
+      adminView.style.display = "none";
+    }
+  });
+
+  async function loadPending(){
+    const list = document.getElementById("pending-list");
+    list.innerHTML = `<div class="empty">Loading…</div>`;
+    const q = query(collection(db, "events"), where("status", "==", "pending"));
+    const snap = await getDocs(q);
+    const items = [];
+    snap.forEach(d => items.push({ id: d.id, ...d.data() }));
+
+    if(items.length === 0){
+      list.innerHTML = `<div class="empty">Nothing waiting on review.</div>`;
+      return;
+    }
+
+    list.innerHTML = items.map(ev => `
+      <div class="card" data-id="${ev.id}">
+        <h3>${escapeHtml(ev.name || "")}</h3>
+        <p>${escapeHtml(ev.day || "")} · ${escapeHtml(ev.time || "")} · ${escapeHtml(ev.venue || "")}</p>
+        <p>${ev.link ? `<a href="${escapeAttr(ev.link)}" target="_blank" rel="noopener">${escapeHtml(ev.link)}</a>` : ""}</p>
+        <p>Submitted by: ${escapeHtml(ev.submitterEmail || "—")}</p>
+        <div class="tags">${(ev.styles||[]).join(" · ")}</div>
+        <div class="actions">
+          <button class="approve">Approve</button>
+          <button class="reject">Reject</button>
+        </div>
+      </div>
+    `).join("");
+
+    list.querySelectorAll(".approve").forEach(btn => {
+      btn.addEventListener("click", async (e) => {
+        const id = e.target.closest(".card").dataset.id;
+        await updateDoc(doc(db, "events", id), { status: "approved" });
+        loadPending();
+      });
+    });
+    list.querySelectorAll(".reject").forEach(btn => {
+      btn.addEventListener("click", async (e) => {
+        const id = e.target.closest(".card").dataset.id;
+        await deleteDoc(doc(db, "events", id));
+        loadPending();
+      });
+    });
+  }
+
+  function escapeHtml(str){
+    const d = document.createElement("div");
+    d.textContent = str;
+    return d.innerHTML;
+  }
+  function escapeAttr(str){
+    return String(str).replace(/"/g,"&quot;");
+  }
+</script>
+</body>
+</html>
