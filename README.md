@@ -66,4 +66,6 @@ In Vercel/Netlify project settings → **Domains** → add `charlottedanceclasse
 - `submit.html` — public event submission form (writes to Firestore as `status: "pending"`)
 - `admin.html` — sign in with the admin account you created in step 1.4 to approve or reject pending submissions
 - `firebase-config.js` — your Firebase project keys go here
-- `seed-events.json` — starting events from Rumbao, RW Latin Dance, and CLTDance to get the calendar populated
+- `seed-events.json` — starting events to get the calendar populated (run `seed_firestore.py` against it, or any other events JSON file, to load/reload events)
+- `seed_firestore.py` — one-off script: `python seed_firestore.py <service-account-key.json> [events.json]`. Requires a Firebase Admin SDK key from Project Settings → Service Accounts → Generate new private key.
+- `sync_rumbao_ics.py` — pulls Rumbao Latin Dance's Punchpass ICS feed, filters out kids/team/private/social entries, and upserts the recurring public classes into Firestore. Safe to re-run each semester (`python sync_rumbao_ics.py --dry-run` to preview, `--write <key.json>` to apply) — matches existing entries by day/time/venue so it updates instead of duplicating.
