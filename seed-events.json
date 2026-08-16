@@ -1,7 +1,10 @@
 [
   {
     "name": "CLTDance Class + Social",
-    "styles": ["salsa", "bachata"],
+    "styles": [
+      "salsa",
+      "bachata"
+    ],
     "day": "Sun",
     "type": "recurring",
     "time": "4:00 PM class / social to 6:30 PM",
@@ -11,7 +14,9 @@
   },
   {
     "name": "Kizomba FUNdations",
-    "styles": ["kizomba"],
+    "styles": [
+      "kizomba"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "7:00 PM",
@@ -21,7 +26,9 @@
   },
   {
     "name": "Kizomba LevelUP",
-    "styles": ["kizomba"],
+    "styles": [
+      "kizomba"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "8:00 PM",
@@ -30,8 +37,10 @@
     "status": "approved"
   },
   {
-    "name": "Charlotte Kizomba Paixão — Beginner Classes",
-    "styles": ["kizomba"],
+    "name": "Charlotte Kizomba Paix\u00e3o \u2014 Beginner Classes",
+    "styles": [
+      "kizomba"
+    ],
     "day": "Tue",
     "type": "recurring",
     "time": "8:00 PM - 9:00 PM",
@@ -40,8 +49,10 @@
     "status": "approved"
   },
   {
-    "name": "Tango CLT — Tango Wednesday",
-    "styles": ["tango"],
+    "name": "Tango CLT \u2014 Tango Wednesday",
+    "styles": [
+      "tango"
+    ],
     "day": "Wed",
     "type": "recurring",
     "time": "7:00 PM intro, 7:45 PM lesson, social to 11 PM",
@@ -50,8 +61,10 @@
     "status": "approved"
   },
   {
-    "name": "Passion For Tango — Class & Practica",
-    "styles": ["tango"],
+    "name": "Passion For Tango \u2014 Class & Practica",
+    "styles": [
+      "tango"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "7:00 PM class, practica to 11 PM",
@@ -60,8 +73,10 @@
     "status": "approved"
   },
   {
-    "name": "Charlotte Shag Club — Shag Night",
-    "styles": ["swing"],
+    "name": "Charlotte Shag Club \u2014 Shag Night",
+    "styles": [
+      "swing"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "7:00 PM",
@@ -70,8 +85,10 @@
     "status": "approved"
   },
   {
-    "name": "Charlotte Westies — Tuesday Lesson & Social",
-    "styles": ["swing"],
+    "name": "Charlotte Westies \u2014 Tuesday Lesson & Social",
+    "styles": [
+      "swing"
+    ],
     "day": "Tue",
     "type": "recurring",
     "time": "See site for current times",
@@ -80,8 +97,10 @@
     "status": "approved"
   },
   {
-    "name": "Charlotte Westies — Thursday Lesson & Social",
-    "styles": ["swing"],
+    "name": "Charlotte Westies \u2014 Thursday Lesson & Social",
+    "styles": [
+      "swing"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "See site for current times",
@@ -90,8 +109,10 @@
     "status": "approved"
   },
   {
-    "name": "CharlotteSwingDance — Monthly Social (2nd Fridays)",
-    "styles": ["swing"],
+    "name": "CharlotteSwingDance \u2014 Monthly Social (2nd Fridays)",
+    "styles": [
+      "swing"
+    ],
     "day": "Fri",
     "type": "recurring",
     "time": "2nd Fridays, 6:30 PM check-in / 7:00 PM start",
@@ -101,7 +122,9 @@
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "7:00 PM - 9:05 PM, multiple levels",
@@ -112,7 +135,9 @@
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Tue",
     "type": "recurring",
     "time": "7:00 PM - 9:05 PM, multiple levels",
@@ -123,7 +148,9 @@
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Wed",
     "type": "recurring",
     "time": "7:00 PM - 9:05 PM, multiple levels",
@@ -134,7 +161,9 @@
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "7:00 PM - 9:05 PM, multiple levels",
@@ -145,7 +174,9 @@
   },
   {
     "name": "Hip Hop (Ages 6-12)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "5:30 PM - 7:00 PM, ages 6-12",
@@ -156,7 +187,9 @@
   },
   {
     "name": "Hip Hop (Ages 3-5)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Tue",
     "type": "recurring",
     "time": "5:30 PM - 6:00 PM, ages 3-5",
@@ -167,7 +200,9 @@
   },
   {
     "name": "Hip Hop (Ages 3-12)",
-    "styles": ["hiphop"],
+    "styles": [
+      "hiphop"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "5:30 PM - 8:30 PM, ages 3-12, multiple slots",
@@ -178,7 +213,9 @@
   },
   {
     "name": "Jazz Classes (Beginner Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "6:00 PM",
@@ -189,7 +226,9 @@
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Mon",
     "type": "recurring",
     "time": "8:05 PM",
@@ -200,7 +239,9 @@
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Tue",
     "type": "recurring",
     "time": "6:00 PM",
@@ -211,7 +252,9 @@
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Wed",
     "type": "recurring",
     "time": "7:00 PM",
@@ -222,7 +265,9 @@
   },
   {
     "name": "AfroSass (Intermediate Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Wed",
     "type": "recurring",
     "time": "8:05 PM",
@@ -233,7 +278,9 @@
   },
   {
     "name": "Contemporary (Intermediate Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "6:00 PM",
@@ -244,7 +291,9 @@
   },
   {
     "name": "\"Tease\" Heels (Beginner Level)",
-    "styles": ["more"],
+    "styles": [
+      "more"
+    ],
     "day": "Thu",
     "type": "recurring",
     "time": "7:00 PM",
@@ -252,5 +301,427 @@
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
     "audience": "adult"
+  },
+  {
+    "name": "Hip Hop (Ages 7-11)",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "5:00 PM - 7:00 PM, ages 7-11",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop (Ages 3-18)",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "10:30-11:15 AM & 4:15-7:30 PM, multiple age groups",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Adult Hip-Hop",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:00 PM - 8:00 PM",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Hip-Hop Flip-Flop (Ages 4-6)",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "11:00 AM - 11:45 AM",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "TuTwos and Threes (Creative Movement)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:15 PM - 4:55 PM, ages 2-3",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK-TK: Ballet/Acrobatics",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:15 PM - 5:00 PM, ages 3-5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "K-1st: Ballet/Jazz",
+    "styles": [
+      "ballet",
+      "jazz"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "5:45 PM - 6:30 PM, ages 5-7",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "6th-12th: Tap",
+    "styles": [
+      "tap"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "7:00 PM - 7:30 PM, ages 11-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "TuTwos and Threes",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "9:00 AM - 9:40 AM, ages 2.5-3",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK: Ballet/Tap",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "9:45 AM - 10:30 AM, ages 3-4.5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "TuTwos and Threes",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "4:15 PM - 4:55 PM, ages 2.5-3.5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "2nd-3rd: Ballet",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 7-9",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "9th-12th: Modern",
+    "styles": [
+      "more"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 14-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "K-1st: Ballet/Tap",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 5-6",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK-TK: Ballet/Tap",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 3.5-5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "2nd-3rd: Jazz/Tap",
+    "styles": [
+      "jazz",
+      "tap"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 7-9",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Ballet Technique",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:00 PM - 6:45 PM, ages 13-70",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "6th-8th: Modern",
+    "styles": [
+      "more"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:45 PM - 7:30 PM, ages 11-14",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK-TK: Ballet/Tap",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "4:15 PM - 5:00 PM, ages 3.5-5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "3rd-5th: Ballet",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 8-10",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "5th-8th: Ballet",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 10-13",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "8th-12th: Ballet",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 12-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Pointe",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "5:00 PM - 6:00 PM, ages 13-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "3rd-5th: Jazz",
+    "styles": [
+      "jazz"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 8-11",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "6th-12th: Jazz",
+    "styles": [
+      "jazz"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 11-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "3rd-7th: Tap",
+    "styles": [
+      "tap"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:00 PM - 7:30 PM, ages 8-12",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK/TK/K: Broadway Babies",
+    "styles": [
+      "musicaltheater"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "4:15 PM - 5:00 PM, ages 3-5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "1st-3rd: Musical Theater",
+    "styles": [
+      "musicaltheater"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 6-8",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "3rd-5th: Musical Theater",
+    "styles": [
+      "musicaltheater"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 8-11",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "6th-12th: Musical Theater",
+    "styles": [
+      "musicaltheater"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM - 7:00 PM, ages 11-18",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "TuTwos and Threes",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "9:30 AM - 10:10 AM, ages 2.5-3.5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreK: Ballet/Acrobatics",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "10:15 AM - 11:00 AM, ages 3.5-5",
+    "venue": "MoveStudio Charlotte, 4418 Monroe Road",
+    "link": "https://movestudiocharlotte.com/youth",
+    "status": "approved",
+    "audience": "kids"
   }
 ]
