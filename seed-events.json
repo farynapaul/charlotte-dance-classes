@@ -801,5 +801,509 @@
     "link": "https://www.gottaswingcharlotte.com/",
     "status": "approved",
     "audience": "adult"
+  },
+  {
+    "name": "Creative Movement (Ages 2-3)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:00 PM & 5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Creative Movement (Ages 2-3)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "4:00 PM & 5:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Creative Movement (Ages 2-3)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Creative Movement (Ages 2-3)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Creative Movement (Ages 2-3)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "9:00 AM & 10:00 AM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "4:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Fri",
+    "type": "recurring",
+    "time": "4:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 1 (Ages 3-4)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "9:00 AM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 2 (Ages 4-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "6:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 2 (Ages 4-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "4:00 PM & 5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 2 (Ages 4-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "6:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 2 (Ages 4-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Fri",
+    "type": "recurring",
+    "time": "5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "PreDance 2 (Ages 4-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "11:00 AM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:00 PM & 6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "4:30 PM & 6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "4:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "4:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Fri",
+    "type": "recurring",
+    "time": "5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Combination (Grades K-2)",
+    "styles": [
+      "ballet",
+      "tap"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "9:30 AM & 10:30 AM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop/Jazz (Grades K-2)",
+    "styles": [
+      "hiphop",
+      "jazz"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "5:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Ballet (Grades 3-5)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "4:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop/Jazz (Grades 3-5)",
+    "styles": [
+      "hiphop",
+      "jazz"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "6:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop/Jazz (Grades 3-5)",
+    "styles": [
+      "hiphop",
+      "jazz"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "5:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Tap (Grades 3-5)",
+    "styles": [
+      "tap"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "5:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Ballet 2 (Grades 6-8)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "5:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop (Grades 6-8)",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "7:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Jazz (Grades 6-8)",
+    "styles": [
+      "jazz"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "7:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Jazz (Grades 6-8)",
+    "styles": [
+      "jazz"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Tap (Grades 6-8)",
+    "styles": [
+      "tap"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Ballet 3 (Grades 9-12)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Ballet 4 (Grades 9-12)",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "6:30 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Pointe",
+    "styles": [
+      "ballet"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "8:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Tap (Grades 9-12)",
+    "styles": [
+      "tap"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Contemporary/Jazz (Grades 9-12)",
+    "styles": [
+      "jazz",
+      "more"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:00 PM & 6:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop (Grades 9-12)",
+    "styles": [
+      "hiphop"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "8:00 PM",
+    "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
+    "link": "https://dancefevercharlotte.com/class-schedule/",
+    "status": "approved",
+    "audience": "kids"
   }
 ]
