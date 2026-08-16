@@ -2,8 +2,8 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /events/{eventId} {
-      // anyone can read approved events
-      allow read: if resource.data.status == "approved";
+      // anyone can read approved events; a signed-in admin can read everything (incl. pending)
+      allow read: if resource.data.status == "approved" || request.auth != null;
       // anyone can submit a new event, but it must start as "pending"
       allow create: if request.resource.data.status == "pending";
       // only a signed-in admin can approve/reject/edit
