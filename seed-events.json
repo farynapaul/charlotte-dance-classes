@@ -1,15 +1,5 @@
 [
   {
-    "name": "RW Latin Dance — Class Schedule",
-    "styles": ["salsa", "bachata", "tango"],
-    "day": "Wed",
-    "type": "recurring",
-    "time": "See site for current times",
-    "venue": "The Dance Loft, 756 Tyvola Rd Suite 734",
-    "link": "https://rwlatindance.com/",
-    "status": "approved"
-  },
-  {
     "name": "CLTDance Class + Social",
     "styles": ["salsa", "bachata"],
     "day": "Sun",
@@ -20,13 +10,23 @@
     "status": "approved"
   },
   {
-    "name": "Kizomba Alegria Dance Co. — FUNdations & LevelUP",
+    "name": "Kizomba FUNdations",
     "styles": ["kizomba"],
     "day": "Mon",
     "type": "recurring",
-    "time": "See site for current times",
-    "venue": "4213 S Blvd",
-    "link": "https://kizombacharlotte.com/",
+    "time": "7:00 PM",
+    "venue": "Kizomba Alegria Dance Co., 4213 S Blvd",
+    "link": "https://www.kizombacharlotte.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Kizomba LevelUP",
+    "styles": ["kizomba"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "8:00 PM",
+    "venue": "Kizomba Alegria Dance Co., 4213 S Blvd",
+    "link": "https://www.kizombacharlotte.com/",
     "status": "approved"
   },
   {
@@ -36,7 +36,7 @@
     "type": "recurring",
     "time": "8:00 PM - 9:00 PM",
     "venue": "See Meetup for location",
-    "link": "",
+    "link": "https://www.meetup.com/kizomba-dance-classes-w-charlotte-kizomba-paixao/",
     "status": "approved"
   },
   {
@@ -47,6 +47,26 @@
     "time": "7:00 PM intro, 7:45 PM lesson, social to 11 PM",
     "venue": "The Long Room, Plaza Midwood",
     "link": "https://tangoclt.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Passion For Tango — Class & Practica",
+    "styles": ["tango"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "7:00 PM class, practica to 11 PM",
+    "venue": "Lynn's Dance Club, 4819 South Tryon St",
+    "link": "http://www.passionfortango.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Charlotte Shag Club — Shag Night",
+    "styles": ["swing"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "Lynn's Dance Club, 4819 South Tryon St",
+    "link": "https://thelynnsdanceclub.com/",
     "status": "approved"
   },
   {
@@ -74,7 +94,7 @@
     "styles": ["swing"],
     "day": "Fri",
     "type": "recurring",
-    "time": "2nd Fridays — see site for time",
+    "time": "2nd Fridays, 6:30 PM check-in / 7:00 PM start",
     "venue": "King David Christian Conservatory",
     "link": "https://charlotteswingdance.com/",
     "status": "approved"
