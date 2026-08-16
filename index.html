@@ -227,7 +227,11 @@
 
 <main>
   <div class="filters">
-    <div class="filter-group" id="style-filters">
+    <div class="filter-group" id="type-filters">
+      <button class="chip active" data-type="social">Social & Partner Dance</button>
+      <button class="chip" data-type="studio">Studio Dance</button>
+    </div>
+    <div class="filter-group" id="social-style-filters">
       <button class="chip active" data-style="all">All styles</button>
       <button class="chip" data-style="salsa">Salsa</button>
       <button class="chip" data-style="bachata">Bachata</button>
@@ -235,6 +239,9 @@
       <button class="chip" data-style="kizomba">Kizomba</button>
       <button class="chip" data-style="tango">Tango</button>
       <button class="chip" data-style="swing">Swing</button>
+    </div>
+    <div class="filter-group" id="studio-style-filters" style="display:none;">
+      <button class="chip active" data-style="all">All styles</button>
       <button class="chip" data-style="hiphop">Hip Hop</button>
       <button class="chip" data-style="ballet">Ballet</button>
       <button class="chip" data-style="tap">Tap</button>
@@ -277,6 +284,9 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
+  const STUDIO_STYLES = ["hiphop", "ballet", "tap", "jazz", "musicaltheater", "more"];
+
+  let activeType = "social";
   let activeStyle = "all";
   let activeDay = "all";
   let activeAudience = "adult";
@@ -300,10 +310,12 @@
   function render(){
     const list = document.getElementById("event-list");
     const filtered = allEvents.filter(ev => {
+      const isStudio = (ev.styles || []).some(s => STUDIO_STYLES.includes(s));
+      const typeMatch = activeType === "studio" ? isStudio : !isStudio;
       const styleMatch = activeStyle === "all" || (ev.styles || []).includes(activeStyle);
       const dayMatch = activeDay === "all" || ev.day === activeDay;
       const audienceMatch = activeAudience === "kids" ? ev.audience === "kids" : ev.audience !== "kids";
-      return styleMatch && dayMatch && audienceMatch;
+      return typeMatch && styleMatch && dayMatch && audienceMatch;
     });
 
     if(filtered.length === 0){
@@ -335,12 +347,29 @@
     return String(str).replace(/"/g,"&quot;");
   }
 
-  document.getElementById("style-filters").addEventListener("click", e => {
+  function onStyleFilterClick(e){
     const btn = e.target.closest(".chip");
     if(!btn) return;
-    document.querySelectorAll("#style-filters .chip").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll("#social-style-filters .chip, #studio-style-filters .chip").forEach(b=>b.classList.remove("active"));
     btn.classList.add("active");
     activeStyle = btn.dataset.style;
+    render();
+  }
+  document.getElementById("social-style-filters").addEventListener("click", onStyleFilterClick);
+  document.getElementById("studio-style-filters").addEventListener("click", onStyleFilterClick);
+
+  document.getElementById("type-filters").addEventListener("click", e => {
+    const btn = e.target.closest(".chip");
+    if(!btn) return;
+    document.querySelectorAll("#type-filters .chip").forEach(b=>b.classList.remove("active"));
+    btn.classList.add("active");
+    activeType = btn.dataset.type;
+    activeStyle = "all";
+    document.querySelectorAll("#social-style-filters .chip, #studio-style-filters .chip").forEach(b=>b.classList.remove("active"));
+    const group = activeType === "studio" ? "studio-style-filters" : "social-style-filters";
+    document.getElementById(group).querySelector('[data-style="all"]').classList.add("active");
+    document.getElementById("social-style-filters").style.display = activeType === "social" ? "" : "none";
+    document.getElementById("studio-style-filters").style.display = activeType === "studio" ? "" : "none";
     render();
   });
 
