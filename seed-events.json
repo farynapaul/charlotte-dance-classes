@@ -723,5 +723,57 @@
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
     "audience": "kids"
+  },
+  {
+    "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
+    "styles": [
+      "more"
+    ],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "5:45 PM",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd, Charlotte",
+    "link": "https://divadance.com/locations/charlotte-nc/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
+    "styles": [
+      "more"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:30 PM",
+    "venue": "Moxie Fitness Studio, 326 Main St, Pineville",
+    "link": "https://divadance.com/locations/charlotte-nc/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
+    "styles": [
+      "more"
+    ],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "8:30 PM",
+    "venue": "Open Door Studios, 3706 Central Ave, Charlotte",
+    "link": "https://divadance.com/locations/charlotte-nc/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
+    "styles": [
+      "more"
+    ],
+    "day": "Sat",
+    "type": "recurring",
+    "time": "11:30 AM",
+    "venue": "Moxie Fitness Studio, 326 Main St, Pineville",
+    "link": "https://divadance.com/locations/charlotte-nc/",
+    "status": "approved",
+    "audience": "adult"
   }
 ]
