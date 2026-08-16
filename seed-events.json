@@ -98,5 +98,82 @@
     "venue": "King David Christian Conservatory",
     "link": "https://charlotteswingdance.com/",
     "status": "approved"
+  },
+  {
+    "name": "Hip Hop Classes (Multiple Levels)",
+    "styles": ["hiphop"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "7:00 PM - 9:05 PM, multiple levels",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Hip Hop Classes (Multiple Levels)",
+    "styles": ["hiphop"],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "7:00 PM - 9:05 PM, multiple levels",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Hip Hop Classes (Multiple Levels)",
+    "styles": ["hiphop"],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:00 PM - 9:05 PM, multiple levels",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Hip Hop Classes (Multiple Levels)",
+    "styles": ["hiphop"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "7:00 PM - 9:05 PM, multiple levels",
+    "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
+    "link": "https://www.ncdancedistrict.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Hip Hop (Ages 6-12)",
+    "styles": ["hiphop"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "5:30 PM - 7:00 PM, ages 6-12",
+    "venue": "Carolina Dance Capital, 12210 Copper Way",
+    "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop (Ages 3-5)",
+    "styles": ["hiphop"],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "5:30 PM - 6:00 PM, ages 3-5",
+    "venue": "Carolina Dance Capital, 12210 Copper Way",
+    "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
+    "status": "approved",
+    "audience": "kids"
+  },
+  {
+    "name": "Hip Hop (Ages 3-12)",
+    "styles": ["hiphop"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "5:30 PM - 8:30 PM, ages 3-12, multiple slots",
+    "venue": "Carolina Dance Capital, 12210 Copper Way",
+    "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
+    "status": "approved",
+    "audience": "kids"
   }
 ]
