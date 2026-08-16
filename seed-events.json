@@ -775,5 +775,31 @@
     "link": "https://divadance.com/locations/charlotte-nc/",
     "status": "approved",
     "audience": "adult"
+  },
+  {
+    "name": "GottaSwing: Beginner Swing (Swingouts)",
+    "styles": [
+      "swing"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "7:00 PM",
+    "venue": "First United Methodist Church, 501 N. Tryon St, Charlotte",
+    "link": "https://www.gottaswingcharlotte.com/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "GottaSwing: Intermediate Lindy",
+    "styles": [
+      "swing"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "8:15 PM",
+    "venue": "First United Methodist Church, 501 N. Tryon St, Charlotte",
+    "link": "https://www.gottaswingcharlotte.com/",
+    "status": "approved",
+    "audience": "adult"
   }
 ]
