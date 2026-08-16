@@ -6,7 +6,9 @@ Each Punchpass org publishes an ICS feed with one VEVENT per individual class
 occurrence (not RRULE-based), so this script groups occurrences by weekday +
 start time (+ location, for studios where the feed's LOCATION field is a real
 address rather than a room label) to detect recurring weekly classes. It
-skips kids/team/private/social entries and upserts using a deterministic
+tags kids/teen programs with audience="kids" (separate from the dance-style
+tags, so a kids salsa class still carries styles=["salsa"]), skips
+team/private/social entries, and upserts using a deterministic
 document ID, so re-running it updates existing entries instead of duplicating
 them — even as Punchpass series IDs change every semester.
 
@@ -27,10 +29,11 @@ import requests
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) charlottedanceclasses.com-sync-script"}
 MIN_OCCURRENCES = 4  # occurrences needed across the feed's date range to count as "recurring"
 
+KIDS_KEYWORDS = ["kids", "teen", "little movers"]
+
 EXCLUDE_KEYWORDS = [
-    "kids", "teen", "little movers", "team", "performance challenge",
-    "performance team", "canceled", "cancelled", "reservation",
-    "open house", "social",
+    "team", "performance challenge", "canceled", "cancelled",
+    "reservation", "open house", "social",
 ]
 
 STYLE_KEYWORDS = [
@@ -76,8 +79,13 @@ def clean_venue(location):
     return re.sub(r"\s+", " ", location).strip()
 
 
-def build_name(summaries, styles):
+def build_name(summaries, styles, is_kids):
     text = " ".join(summaries).lower()
+    if is_kids:
+        # summaries carry the specific kids program name already (e.g. "Little Movers", "Rumbao Teens!")
+        # pick the most common one in case a rare one-off (e.g. "Open House") shares the slot
+        normalized = [re.sub(r"\s*\(\d+/\d+\)\s*$", "", s).strip() for s in summaries]
+        return max(set(normalized), key=normalized.count)
     if "body movement" in text:
         return "Body Movement (Salsa Styling)"
     if "zouk" in text:
@@ -101,9 +109,11 @@ def build_name(summaries, styles):
     return "Class"
 
 
-def make_doc_id(studio_key, day, time_str, venue):
+def make_doc_id(studio_key, day, time_str, venue, name):
     slug = re.sub(r"[^a-z0-9]+", "-", f"{studio_key}-{day}-{time_str}-{venue}".lower()).strip("-")
-    h = hashlib.sha1(slug.encode()).hexdigest()[:8]
+    # include name in the hash input (not just the slug) so distinct classes sharing a
+    # day/time/venue slot (e.g. an adult drop-in and a kids class at the same time) don't collide
+    h = hashlib.sha1(f"{slug}-{name}".lower().encode()).hexdigest()[:8]
     return f"{slug[:80]}-{h}"
 
 
@@ -116,7 +126,8 @@ def fetch_and_group(studio_key, config):
     for comp in cal.walk("VEVENT"):
         summary = str(comp.get("SUMMARY", ""))
         lower = summary.lower()
-        if any(kw in lower for kw in EXCLUDE_KEYWORDS):
+        is_kids = any(kw in lower for kw in KIDS_KEYWORDS)
+        if not is_kids and any(kw in lower for kw in EXCLUDE_KEYWORDS):
             continue
 
         dtstart = comp.get("DTSTART").dt
@@ -125,12 +136,12 @@ def fetch_and_group(studio_key, config):
 
         if config["use_feed_location_as_venue"]:
             venue = clean_venue(str(comp.get("LOCATION", "")))
-            key = (day, time_str, venue)
+            key = (day, time_str, venue, is_kids)
         else:
             venue = config["fixed_venue"]
-            key = (day, time_str)
+            key = (day, time_str, is_kids)
 
-        groups[key].append((summary, venue))
+        groups[key].append((summary, venue, is_kids))
 
     recurring = {}
     for key, entries in groups.items():
@@ -139,14 +150,20 @@ def fetch_and_group(studio_key, config):
         summaries = [e[0] for e in entries]
         venue = entries[0][1]
         day, time_str = key[0], key[1]
+        is_kids_group = entries[0][2]
         styles = detect_styles(summaries)
-        if not styles:
+        if not styles and not is_kids_group:
+            # for adult classes, no recognized dance-style keyword means it's probably not
+            # a class we can meaningfully list (e.g. "Body Movement" needs its own carve-out
+            # in STYLE_KEYWORDS); kids/teen programs are kept regardless since audience,
+            # not style, is what makes them worth listing
             continue
-        name = build_name(summaries, styles)
-        doc_id = make_doc_id(studio_key, day, time_str, venue)
+        name = build_name(summaries, styles, is_kids_group)
+        doc_id = make_doc_id(studio_key, day, time_str, venue, name)
         recurring[doc_id] = {
             "name": name,
             "styles": styles,
+            "audience": "kids" if is_kids_group else "adult",
             "day": day,
             "type": "recurring",
             "time": time_str,
@@ -187,7 +204,7 @@ def main():
         print(f"=== {studio_key}: found {len(recurring)} recurring public classes ===\n")
         for doc_id, ev in sorted(recurring.items(), key=lambda kv: (kv[1]["day"], kv[1]["time"])):
             print(f"  [{doc_id}]")
-            print(f"    {ev['day']} {ev['time']} | {ev['name']} | styles={ev['styles']}")
+            print(f"    {ev['day']} {ev['time']} | {ev['name']} | styles={ev['styles']} | audience={ev['audience']}")
             print(f"    venue: {ev['venue']}")
             print(f"    seen {ev['_occurrences']}x, e.g. {ev['_sample_summaries']}")
             print()
