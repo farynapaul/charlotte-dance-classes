@@ -21,7 +21,7 @@
   },
   {
     "name": "Rumbao Classes",
-    "styles": ["salsa", "bachata"],
+    "styles": ["salsa", "bachata", "zouk"],
     "day": "Thu",
     "type": "recurring",
     "time": "7:00 PM",
@@ -47,6 +47,66 @@
     "time": "4:00 PM class / social to 6:30 PM",
     "venue": "Lenny Boy Brewing Co.",
     "link": "https://www.cltdance.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Kizomba Alegria Dance Co. — FUNdations & LevelUP",
+    "styles": ["kizomba"],
+    "day": "Mon",
+    "type": "recurring",
+    "time": "See site for current times",
+    "venue": "4213 S Blvd",
+    "link": "https://kizombacharlotte.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Charlotte Kizomba Paixão — Beginner Classes",
+    "styles": ["kizomba"],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "8:00 PM - 9:00 PM",
+    "venue": "See Meetup for location",
+    "link": "",
+    "status": "approved"
+  },
+  {
+    "name": "Tango CLT — Tango Wednesday",
+    "styles": ["tango"],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "7:00 PM intro, 7:45 PM lesson, social to 11 PM",
+    "venue": "The Long Room, Plaza Midwood",
+    "link": "https://tangoclt.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Charlotte Westies — Tuesday Lesson & Social",
+    "styles": ["swing"],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "See site for current times",
+    "venue": "Levine Senior Center, Matthews",
+    "link": "https://charlottewesties.com/",
+    "status": "approved"
+  },
+  {
+    "name": "Charlotte Westies — Thursday Lesson & Social",
+    "styles": ["swing"],
+    "day": "Thu",
+    "type": "recurring",
+    "time": "See site for current times",
+    "venue": "Dynamic Ballroom, Cornelius",
+    "link": "https://charlottewesties.com/",
+    "status": "approved"
+  },
+  {
+    "name": "CharlotteSwingDance — Monthly Social (2nd Fridays)",
+    "styles": ["swing"],
+    "day": "Fri",
+    "type": "recurring",
+    "time": "2nd Fridays — see site for time",
+    "venue": "King David Christian Conservatory",
+    "link": "https://charlotteswingdance.com/",
     "status": "approved"
   }
 ]
