@@ -1447,5 +1447,19 @@
     "status": "approved",
     "audience": "adult",
     "priority": 20
+  },
+  {
+    "name": "Brazilian Zouk Practica / Social",
+    "styles": [
+      "zouk"
+    ],
+    "day": "Wed",
+    "type": "recurring",
+    "time": "9:15 PM - 10:30 PM",
+    "venue": "Viva Collective Studios 901 N Tryon Street 28206",
+    "link": "https://www.rumbaolatindance.com/",
+    "status": "approved",
+    "audience": "adult",
+    "priority": 50
   }
 ]
