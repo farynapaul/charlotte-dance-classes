@@ -196,7 +196,7 @@ function render(){
   const list = document.getElementById("event-list");
   const filtered = allEvents.filter(ev => {
     const isStudio = (ev.styles || []).some(s => STUDIO_STYLES.includes(s));
-    const typeMatch = activeType === "studio" ? isStudio : !isStudio;
+    const typeMatch = activeType === "all" ? true : (activeType === "studio" ? isStudio : !isStudio);
     const styleMatch = activeStyle === "all" || (ev.styles || []).includes(activeStyle);
     const dayMatch = activeDay === "all" || ev.day === activeDay;
     const audienceMatch = activeAudience === "kids" ? ev.audience === "kids" : ev.audience !== "kids";
@@ -241,8 +241,8 @@ function syncTypeUI(){
   document.querySelectorAll("#type-filters .chip").forEach(b => b.classList.toggle("active", b.dataset.type === activeType));
   const socialGroup = document.getElementById("social-style-filters");
   const studioGroup = document.getElementById("studio-style-filters");
-  if(socialGroup) socialGroup.style.display = activeType === "social" ? "" : "none";
-  if(studioGroup) studioGroup.style.display = activeType === "studio" ? "" : "none";
+  if(socialGroup) socialGroup.style.display = (activeType === "social" || activeType === "all") ? "" : "none";
+  if(studioGroup) studioGroup.style.display = (activeType === "studio" || activeType === "all") ? "" : "none";
   const typeSelect = document.getElementById("type-select");
   if(typeSelect) typeSelect.value = activeType;
 }
@@ -286,12 +286,26 @@ document.getElementById("type-filters").addEventListener("click", e => {
   render();
 });
 
+// Kids/teens content skews heavily Studio Dance, so leaving Category on "Social & Partner"
+// (the default) makes switching to Kids & Teens look nearly empty. Switching to Kids
+// nudges Category to "All" so both sides show; switching back to Adult leaves Category
+// wherever the user put it -- this is just a smarter default, not a lock.
+function applyAudience(value){
+  activeAudience = value;
+  if(activeAudience === "kids"){
+    activeType = "all";
+    activeStyle = "all";
+    syncTypeUI();
+    syncStyleUI();
+  }
+  syncAudienceUI();
+  render();
+}
+
 document.getElementById("audience-filters").addEventListener("click", e => {
   const btn = e.target.closest(".chip");
   if(!btn) return;
-  activeAudience = btn.dataset.audience;
-  syncAudienceUI();
-  render();
+  applyAudience(btn.dataset.audience);
 });
 
 // Mobile (<600px) swaps the Category/Audience pill rows for <select> dropdowns via CSS;
@@ -305,9 +319,7 @@ document.getElementById("type-select").addEventListener("change", e => {
 });
 
 document.getElementById("audience-select").addEventListener("change", e => {
-  activeAudience = e.target.value;
-  syncAudienceUI();
-  render();
+  applyAudience(e.target.value);
 });
 
 document.getElementById("day-nav").addEventListener("click", e => {
