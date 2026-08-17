@@ -28,6 +28,7 @@ import requests
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) charlottedanceclasses.com-sync-script"}
 MIN_OCCURRENCES = 4  # occurrences needed across the feed's date range to count as "recurring"
+DEFAULT_PRIORITY = 50  # sort weight -- see backfill_priority.py for the tiering scheme
 
 KIDS_KEYWORDS = ["kids", "teen", "little movers"]
 
@@ -173,6 +174,7 @@ def fetch_and_group(studio_key, config):
             "venue": venue,
             "link": config["site_link"],
             "status": "approved",
+            "priority": DEFAULT_PRIORITY,
             "_occurrences": len(entries),
             "_sample_summaries": sorted(set(summaries))[:3],
         }

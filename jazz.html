@@ -24,31 +24,50 @@
 
 <main>
   <div class="filters">
-    <div class="filter-group" id="type-filters">
-      <button class="chip" data-type="social">Social & Partner Dance</button>
-      <button class="chip active" data-type="studio">Studio Dance</button>
-    </div>
-    <div class="filter-group" id="social-style-filters" style="display:none;">
-      <a class="chip" href="index.html" data-style="all">All styles</a>
-      <a class="chip" href="zouk.html" data-style="zouk">Zouk</a>
-      <a class="chip" href="salsa.html" data-style="salsa">Salsa</a>
-      <a class="chip" href="bachata.html" data-style="bachata">Bachata</a>
-      <a class="chip" href="kizomba.html" data-style="kizomba">Kizomba</a>
-      <a class="chip" href="tango.html" data-style="tango">Tango</a>
-      <a class="chip" href="swing.html" data-style="swing">Swing</a>
-    </div>
-    <div class="filter-group" id="studio-style-filters">
-      <a class="chip" href="index.html" data-style="all">All styles</a>
-      <a class="chip" href="hiphop.html" data-style="hiphop">Hip Hop</a>
-      <a class="chip" href="ballet.html" data-style="ballet">Ballet</a>
-      <a class="chip" href="tap.html" data-style="tap">Tap</a>
-      <a class="chip" href="jazz.html" data-style="jazz">Jazz</a>
-      <a class="chip" href="musicaltheater.html" data-style="musicaltheater">Musical Theater</a>
-      <button class="chip" data-style="more">More Dances</button>
-    </div>
-    <div class="filter-group" id="audience-filters">
-      <button class="chip active" data-audience="adult">Adult & Social</button>
-      <button class="chip" data-audience="kids">Kids & Teens</button>
+    <div class="filter-panel">
+      <div class="filter-section">
+        <div class="eyebrow filter-label">Category</div>
+        <div class="filter-group" id="type-filters">
+          <button class="chip" data-type="social">Social & Partner Dance</button>
+          <button class="chip active" data-type="studio">Studio Dance</button>
+        </div>
+        <select class="filter-select" id="type-select" aria-label="Category">
+          <option value="social">Social & Partner Dance</option>
+          <option value="studio" selected>Studio Dance</option>
+        </select>
+      </div>
+      <div class="filter-section">
+        <div class="eyebrow filter-label">Style</div>
+        <div class="filter-group" id="social-style-filters" style="display:none;">
+          <a class="chip" href="index.html" data-style="all">All styles</a>
+          <a class="chip" href="zouk.html" data-style="zouk">Zouk</a>
+          <a class="chip" href="salsa.html" data-style="salsa">Salsa</a>
+          <a class="chip" href="bachata.html" data-style="bachata">Bachata</a>
+          <a class="chip" href="kizomba.html" data-style="kizomba">Kizomba</a>
+          <a class="chip" href="tango.html" data-style="tango">Tango</a>
+          <a class="chip" href="swing.html" data-style="swing">Swing</a>
+        </div>
+        <div class="filter-group" id="studio-style-filters">
+          <a class="chip" href="index.html" data-style="all">All styles</a>
+          <a class="chip" href="hiphop.html" data-style="hiphop">Hip Hop</a>
+          <a class="chip" href="ballet.html" data-style="ballet">Ballet</a>
+          <a class="chip" href="tap.html" data-style="tap">Tap</a>
+          <a class="chip" href="jazz.html" data-style="jazz">Jazz</a>
+          <a class="chip" href="musicaltheater.html" data-style="musicaltheater">Musical Theater</a>
+          <button class="chip" data-style="more">More Dances</button>
+        </div>
+      </div>
+      <div class="filter-section">
+        <div class="eyebrow filter-label">Audience</div>
+        <div class="filter-group" id="audience-filters">
+          <button class="chip active" data-audience="adult">Adult & Social</button>
+          <button class="chip" data-audience="kids">Kids & Teens</button>
+        </div>
+        <select class="filter-select" id="audience-select" aria-label="Audience">
+          <option value="adult">Adult & Social</option>
+          <option value="kids">Kids & Teens</option>
+        </select>
+      </div>
     </div>
   </div>
 

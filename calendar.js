@@ -12,6 +12,11 @@ const db = getFirestore(app);
 
 const STUDIO_STYLES = ["hiphop", "ballet", "tap", "jazz", "musicaltheater", "more"];
 
+// Sort weight, higher = shown first. 50 is the default tier; a lower tier (e.g. 20 for
+// Momentum listings) sinks an event to the bottom without hiding it. A future "featured"
+// tier could use 80 or 100 -- nothing else needs to change to add one.
+const DEFAULT_PRIORITY = 50;
+
 const SITE_URL = "https://charlottedanceclasses.com/";
 const DAY_INDEX = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
 
@@ -173,9 +178,12 @@ async function loadEvents(){
   const snap = await getDocs(q);
   allEvents = [];
   snap.forEach(doc => allEvents.push({ id: doc.id, ...doc.data() }));
-  // sensible default order: day of week, then time
+  // Higher priority sorts first; events missing the field (shouldn't happen post-backfill,
+  // but defensive) fall back to the default tier. Within a tier, day-of-week then time as before.
   const dayOrder = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
   allEvents.sort((a,b)=>{
+    const pa = a.priority ?? DEFAULT_PRIORITY, pb = b.priority ?? DEFAULT_PRIORITY;
+    if(pa !== pb) return pb - pa;
     const da = dayOrder.indexOf(a.day), db_ = dayOrder.indexOf(b.day);
     if(da !== db_) return da - db_;
     return (a.time || "").localeCompare(b.time || "");
@@ -235,15 +243,23 @@ function syncTypeUI(){
   const studioGroup = document.getElementById("studio-style-filters");
   if(socialGroup) socialGroup.style.display = activeType === "social" ? "" : "none";
   if(studioGroup) studioGroup.style.display = activeType === "studio" ? "" : "none";
+  const typeSelect = document.getElementById("type-select");
+  if(typeSelect) typeSelect.value = activeType;
 }
 function syncStyleUI(){
   document.querySelectorAll("#social-style-filters .chip, #studio-style-filters .chip").forEach(b => {
     b.classList.toggle("active", b.dataset.style === activeStyle);
   });
 }
+function syncAudienceUI(){
+  document.querySelectorAll("#audience-filters .chip").forEach(b => b.classList.toggle("active", b.dataset.audience === activeAudience));
+  const audienceSelect = document.getElementById("audience-select");
+  if(audienceSelect) audienceSelect.value = activeAudience;
+}
 
 syncTypeUI();
 syncStyleUI();
+syncAudienceUI();
 injectOrganizationJsonLd();
 
 // Every style chip is a real <a href="..."> to that style's dedicated page (or
@@ -273,9 +289,24 @@ document.getElementById("type-filters").addEventListener("click", e => {
 document.getElementById("audience-filters").addEventListener("click", e => {
   const btn = e.target.closest(".chip");
   if(!btn) return;
-  document.querySelectorAll("#audience-filters .chip").forEach(b=>b.classList.remove("active"));
-  btn.classList.add("active");
   activeAudience = btn.dataset.audience;
+  syncAudienceUI();
+  render();
+});
+
+// Mobile (<600px) swaps the Category/Audience pill rows for <select> dropdowns via CSS;
+// these listeners keep that alternate UI wired to the same state as the chips.
+document.getElementById("type-select").addEventListener("change", e => {
+  activeType = e.target.value;
+  activeStyle = "all";
+  syncTypeUI();
+  syncStyleUI();
+  render();
+});
+
+document.getElementById("audience-select").addEventListener("change", e => {
+  activeAudience = e.target.value;
+  syncAudienceUI();
   render();
 });
 

@@ -10,7 +10,8 @@
     "time": "4:00 PM class / social to 6:30 PM",
     "venue": "Lenny Boy Brewing Co.",
     "link": "https://www.cltdance.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Kizomba FUNdations",
@@ -22,7 +23,8 @@
     "time": "7:00 PM",
     "venue": "Kizomba Alegria Dance Co., 4213 S Blvd",
     "link": "https://www.kizombacharlotte.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Kizomba LevelUP",
@@ -34,7 +36,8 @@
     "time": "8:00 PM",
     "venue": "Kizomba Alegria Dance Co., 4213 S Blvd",
     "link": "https://www.kizombacharlotte.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Charlotte Kizomba Paix\u00e3o \u2014 Beginner Classes",
@@ -46,7 +49,8 @@
     "time": "8:00 PM - 9:00 PM",
     "venue": "See Meetup for location",
     "link": "https://www.meetup.com/kizomba-dance-classes-w-charlotte-kizomba-paixao/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Tango CLT \u2014 Tango Wednesday",
@@ -58,7 +62,8 @@
     "time": "7:00 PM intro, 7:45 PM lesson, social to 11 PM",
     "venue": "The Long Room, Plaza Midwood",
     "link": "https://tangoclt.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Passion For Tango \u2014 Class & Practica",
@@ -70,7 +75,8 @@
     "time": "7:00 PM class, practica to 11 PM",
     "venue": "Lynn's Dance Club, 4819 South Tryon St",
     "link": "http://www.passionfortango.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Charlotte Shag Club \u2014 Shag Night",
@@ -82,7 +88,8 @@
     "time": "7:00 PM",
     "venue": "Lynn's Dance Club, 4819 South Tryon St",
     "link": "https://thelynnsdanceclub.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Charlotte Westies \u2014 Tuesday Lesson & Social",
@@ -94,7 +101,8 @@
     "time": "See site for current times",
     "venue": "Levine Senior Center, Matthews",
     "link": "https://charlottewesties.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Charlotte Westies \u2014 Thursday Lesson & Social",
@@ -106,7 +114,8 @@
     "time": "See site for current times",
     "venue": "Dynamic Ballroom, Cornelius",
     "link": "https://charlottewesties.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "CharlotteSwingDance \u2014 Monthly Social (2nd Fridays)",
@@ -118,7 +127,8 @@
     "time": "2nd Fridays, 6:30 PM check-in / 7:00 PM start",
     "venue": "King David Christian Conservatory",
     "link": "https://charlotteswingdance.com/",
-    "status": "approved"
+    "status": "approved",
+    "priority": 50
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
@@ -131,7 +141,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
@@ -144,7 +155,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
@@ -157,7 +169,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip Hop Classes (Multiple Levels)",
@@ -170,7 +183,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Ages 6-12)",
@@ -183,7 +197,8 @@
     "venue": "Carolina Dance Capital, 12210 Copper Way",
     "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Ages 3-5)",
@@ -196,7 +211,8 @@
     "venue": "Carolina Dance Capital, 12210 Copper Way",
     "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Ages 3-12)",
@@ -209,7 +225,8 @@
     "venue": "Carolina Dance Capital, 12210 Copper Way",
     "link": "https://carolinadancecapital.com/recreational-dance-classes-081924/hip-hop-dance-classes/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Jazz Classes (Beginner Level)",
@@ -222,7 +239,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
@@ -235,7 +253,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
@@ -248,7 +267,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "PRO Style Choreo (Advanced Level)",
@@ -261,7 +281,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "AfroSass (Intermediate Level)",
@@ -274,7 +295,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Contemporary (Intermediate Level)",
@@ -287,7 +309,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "\"Tease\" Heels (Beginner Level)",
@@ -300,7 +323,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd",
     "link": "https://www.ncdancedistrict.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Ages 7-11)",
@@ -313,7 +337,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Ages 3-18)",
@@ -326,7 +351,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Adult Hip-Hop",
@@ -339,7 +365,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Hip-Hop Flip-Flop (Ages 4-6)",
@@ -352,7 +379,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "TuTwos and Threes (Creative Movement)",
@@ -365,7 +393,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK-TK: Ballet/Acrobatics",
@@ -378,7 +407,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "K-1st: Ballet/Jazz",
@@ -392,7 +422,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "6th-12th: Tap",
@@ -405,7 +436,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "TuTwos and Threes",
@@ -418,7 +450,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK: Ballet/Tap",
@@ -432,7 +465,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "TuTwos and Threes",
@@ -445,7 +479,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "2nd-3rd: Ballet",
@@ -458,7 +493,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "9th-12th: Modern",
@@ -471,7 +507,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "K-1st: Ballet/Tap",
@@ -485,7 +522,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK-TK: Ballet/Tap",
@@ -499,7 +537,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "2nd-3rd: Jazz/Tap",
@@ -513,7 +552,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Ballet Technique",
@@ -526,7 +566,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "6th-8th: Modern",
@@ -539,7 +580,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK-TK: Ballet/Tap",
@@ -553,7 +595,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "3rd-5th: Ballet",
@@ -566,7 +609,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "5th-8th: Ballet",
@@ -579,7 +623,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "8th-12th: Ballet",
@@ -592,7 +637,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Pointe",
@@ -605,7 +651,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "3rd-5th: Jazz",
@@ -618,7 +665,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "6th-12th: Jazz",
@@ -631,7 +679,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "3rd-7th: Tap",
@@ -644,7 +693,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK/TK/K: Broadway Babies",
@@ -657,7 +707,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "1st-3rd: Musical Theater",
@@ -670,7 +721,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "3rd-5th: Musical Theater",
@@ -683,7 +735,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "6th-12th: Musical Theater",
@@ -696,7 +749,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "TuTwos and Threes",
@@ -709,7 +763,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreK: Ballet/Acrobatics",
@@ -722,7 +777,8 @@
     "venue": "MoveStudio Charlotte, 4418 Monroe Road",
     "link": "https://movestudiocharlotte.com/youth",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
@@ -735,7 +791,8 @@
     "venue": "NC Dance District, 4109 Stuart Andrew Blvd, Charlotte",
     "link": "https://divadance.com/locations/charlotte-nc/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
@@ -748,7 +805,8 @@
     "venue": "Moxie Fitness Studio, 326 Main St, Pineville",
     "link": "https://divadance.com/locations/charlotte-nc/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
@@ -761,7 +819,8 @@
     "venue": "Open Door Studios, 3706 Central Ave, Charlotte",
     "link": "https://divadance.com/locations/charlotte-nc/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "DivaDance (Pop Choreo / Hip Hop / Heels)",
@@ -774,7 +833,8 @@
     "venue": "Moxie Fitness Studio, 326 Main St, Pineville",
     "link": "https://divadance.com/locations/charlotte-nc/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "GottaSwing: Beginner Swing (Swingouts)",
@@ -787,7 +847,8 @@
     "venue": "First United Methodist Church, 501 N. Tryon St, Charlotte",
     "link": "https://www.gottaswingcharlotte.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "GottaSwing: Intermediate Lindy",
@@ -800,7 +861,8 @@
     "venue": "First United Methodist Church, 501 N. Tryon St, Charlotte",
     "link": "https://www.gottaswingcharlotte.com/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 50
   },
   {
     "name": "Creative Movement (Ages 2-3)",
@@ -813,7 +875,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Creative Movement (Ages 2-3)",
@@ -826,7 +889,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Creative Movement (Ages 2-3)",
@@ -839,7 +903,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Creative Movement (Ages 2-3)",
@@ -852,7 +917,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Creative Movement (Ages 2-3)",
@@ -865,7 +931,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -878,7 +945,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -891,7 +959,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -904,7 +973,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -917,7 +987,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -930,7 +1001,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 1 (Ages 3-4)",
@@ -943,7 +1015,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 2 (Ages 4-5)",
@@ -956,7 +1029,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 2 (Ages 4-5)",
@@ -969,7 +1043,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 2 (Ages 4-5)",
@@ -982,7 +1057,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 2 (Ages 4-5)",
@@ -995,7 +1071,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "PreDance 2 (Ages 4-5)",
@@ -1008,7 +1085,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1022,7 +1100,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1036,7 +1115,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1050,7 +1130,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1064,7 +1145,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1078,7 +1160,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Combination (Grades K-2)",
@@ -1092,7 +1175,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop/Jazz (Grades K-2)",
@@ -1106,7 +1190,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Ballet (Grades 3-5)",
@@ -1119,7 +1204,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop/Jazz (Grades 3-5)",
@@ -1133,7 +1219,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop/Jazz (Grades 3-5)",
@@ -1147,7 +1234,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Tap (Grades 3-5)",
@@ -1160,7 +1248,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Ballet 2 (Grades 6-8)",
@@ -1173,7 +1262,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Grades 6-8)",
@@ -1186,7 +1276,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Jazz (Grades 6-8)",
@@ -1199,7 +1290,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Jazz (Grades 6-8)",
@@ -1212,7 +1304,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Tap (Grades 6-8)",
@@ -1225,7 +1318,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Ballet 3 (Grades 9-12)",
@@ -1238,7 +1332,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Ballet 4 (Grades 9-12)",
@@ -1251,7 +1346,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Pointe",
@@ -1264,7 +1360,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Tap (Grades 9-12)",
@@ -1277,7 +1374,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Contemporary/Jazz (Grades 9-12)",
@@ -1291,7 +1389,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Hip Hop (Grades 9-12)",
@@ -1304,7 +1403,8 @@
     "venue": "Dance Fever Charlotte, 10211 Prosperity Park Drive Suite 240",
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
-    "audience": "kids"
+    "audience": "kids",
+    "priority": 50
   },
   {
     "name": "Momentum: Bachata Beginner",
@@ -1317,7 +1417,8 @@
     "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
     "link": "https://www.instagram.com/momentumdanceproject/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 20
   },
   {
     "name": "Momentum: Bachata Intermediate",
@@ -1330,7 +1431,8 @@
     "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
     "link": "https://www.instagram.com/momentumdanceproject/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 20
   },
   {
     "name": "Momentum: Zouk (class + practice)",
@@ -1343,6 +1445,7 @@
     "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
     "link": "https://www.instagram.com/momentumdanceproject/",
     "status": "approved",
-    "audience": "adult"
+    "audience": "adult",
+    "priority": 20
   }
 ]
