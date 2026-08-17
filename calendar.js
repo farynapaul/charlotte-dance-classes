@@ -16,7 +16,40 @@ let activeDay = "all";
 let activeAudience = "adult";
 let allEvents = [];
 
+// Style pages are separate page loads (not a SPA), so every chip click is a full
+// navigation. Caching the fetched events in sessionStorage means hopping between
+// salsa.html -> bachata.html -> tango.html only hits Firestore once per session
+// (or every CACHE_TTL_MS, whichever comes first), instead of refetching on every click.
+const CACHE_KEY = "cdc_events_cache_v1";
+const CACHE_TTL_MS = 15 * 60 * 1000; // 15 minutes
+
+function readEventsCache(){
+  try {
+    const raw = sessionStorage.getItem(CACHE_KEY);
+    if(!raw) return null;
+    const { savedAt, events } = JSON.parse(raw);
+    if(!Array.isArray(events) || Date.now() - savedAt > CACHE_TTL_MS) return null;
+    return events;
+  } catch(e){
+    return null;
+  }
+}
+function writeEventsCache(events){
+  try {
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ savedAt: Date.now(), events }));
+  } catch(e){
+    // sessionStorage unavailable (private browsing, quota) -- fine, just skip caching
+  }
+}
+
 async function loadEvents(){
+  const cached = readEventsCache();
+  if(cached){
+    allEvents = cached;
+    render();
+    return;
+  }
+
   const q = query(collection(db, "events"), where("status", "==", "approved"));
   const snap = await getDocs(q);
   allEvents = [];
@@ -28,6 +61,7 @@ async function loadEvents(){
     if(da !== db_) return da - db_;
     return (a.time || "").localeCompare(b.time || "");
   });
+  writeEventsCache(allEvents);
   render();
 }
 
@@ -83,18 +117,20 @@ function syncTypeUI(){
 }
 function syncStyleUI(){
   document.querySelectorAll("#social-style-filters .chip, #studio-style-filters .chip").forEach(b => {
-    if(b.dataset.style) b.classList.toggle("active", b.dataset.style === activeStyle);
+    b.classList.toggle("active", b.dataset.style === activeStyle);
   });
 }
 
 syncTypeUI();
 syncStyleUI();
 
+// Every style chip is a real <a href="..."> to that style's dedicated page (or
+// index.html for "All styles"), so the browser navigates natively -- no JS needed.
+// The lone exception is "More Dances" (a <button>, no dedicated page for the
+// catch-all), which still filters in place like the day/audience/type controls.
 function onStyleFilterClick(e){
   const btn = e.target.closest(".chip");
-  // chips without data-style are real links (e.g. index.html's style chips, which
-  // navigate to that style's dedicated page) -- let the browser handle those natively.
-  if(!btn || !btn.dataset.style) return;
+  if(!btn || btn.tagName !== "BUTTON") return;
   activeStyle = btn.dataset.style;
   syncStyleUI();
   render();
