@@ -12,4 +12,4 @@ export const firebaseConfig = {
 // App Check (reCAPTCHA v3) site key -- safe to expose client-side, same as apiKey above.
 // Registered at https://www.google.com/recaptcha/admin for domains: charlottedanceclasses.com,
 // www.charlottedanceclasses.com, localhost, charlotte-dance-classes.vercel.app
-export const recaptchaSiteKey = "6LcauoktAAAAAC2d_E1QkFW9ipl-adJJhJN_XpO2";
+export const recaptchaSiteKey = "6LcauoktAAAAAC2d_E1QkFW9ipI-adJJhJN_XpO2";
