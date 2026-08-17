@@ -2,12 +2,16 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /events/{eventId} {
-      // anyone can read approved events; a signed-in admin can read everything (incl. pending)
+      // anyone can read approved events; a signed-in admin can read everything (incl. pending).
+      // Reads are intentionally NOT gated on App Check -- Googlebot and other legitimate
+      // crawlers need to read this data too, and reCAPTCHA v3 attestation isn't reliable
+      // for automated crawlers. App Check enforcement (in the App Check console) is OFF;
+      // instead we require a valid App Check token only on writes, right here in rules.
       allow read: if resource.data.status == "approved" || request.auth != null;
-      // anyone can submit a new event, but it must start as "pending"
-      allow create: if request.resource.data.status == "pending";
-      // only a signed-in admin can approve/reject/edit
-      allow update, delete: if request.auth != null;
+      // anyone can submit a new event, but it must start as "pending" and come from our app
+      allow create: if request.resource.data.status == "pending" && request.app != null;
+      // only a signed-in admin, using our app, can approve/reject/edit
+      allow update, delete: if request.auth != null && request.app != null;
     }
   }
 }
