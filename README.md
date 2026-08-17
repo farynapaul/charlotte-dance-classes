@@ -62,7 +62,9 @@ In Vercel/Netlify project settings → **Domains** → add `charlottedanceclasse
 
 ## Files
 
-- `index.html` — public calendar, filterable by style and day
+- `index.html` — public calendar homepage, filterable by style and day. Style chips (Salsa, Tango, Hip Hop, etc.) link out to that style's dedicated page instead of just filtering in place.
+- `salsa.html`, `bachata.html`, `zouk.html`, `kizomba.html`, `tango.html`, `swing.html`, `hiphop.html`, `ballet.html`, `tap.html`, `jazz.html`, `musicaltheater.html` — dedicated per-style pages, each pre-filtered to its own style on load (via `<body data-default-style="...">`) with a unique title/meta description/intro for SEO. Same calendar underneath as index.html — clicking a different chip on these pages just re-filters in place, it doesn't navigate away. There's no dedicated page for "More Dances" since it's a catch-all for miscellaneous studio genres (AfroSass, Contemporary, etc.), not a single named style.
+- `calendar.css` / `calendar.js` — the shared styling and rendering logic behind index.html and every dedicated style page. Edit these once and every page picks up the change; there's no per-page duplication of the calendar's CSS or JS. `calendar.js` reads `document.body.dataset.defaultStyle` to decide which style/type is pre-selected on load (index.html omits the attribute, defaulting to "all").
 - `submit.html` — public event submission form (writes to Firestore as `status: "pending"`)
 - `admin.html` — sign in with the admin account you created in step 1.4 to approve or reject pending submissions
 - `firebase-config.js` — your Firebase project keys go here

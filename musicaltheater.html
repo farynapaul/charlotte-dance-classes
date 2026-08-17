@@ -3,46 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Charlotte Dance Classes — Every class, social & event in one place</title>
-<meta name="description" content="A live calendar of salsa, bachata, zouk, kizomba, tango, swing and hip hop classes and socials across Charlotte, NC.">
+<title>Charlotte Musical Theater Dance Classes | CharlotteDanceClasses.com</title>
+<meta name="description" content="Find musical theater dance classes in Charlotte, NC for kids and teens, updated weekly.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="calendar.css">
 </head>
-<body>
+<body data-default-style="musicaltheater">
 
 <header>
   <div class="clave" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
-  <div class="eyebrow" style="margin-top:18px;">Charlotte, NC</div>
-  <h1>Every class,<br><em>every night.</em></h1>
-  <p>Salsa, bachata, zouk, kizomba, tango, swing & hip hop — every class and social in Charlotte, in one calendar.</p>
+  <a class="back-link" href="index.html">&larr; All Charlotte dance classes</a>
+  <div class="eyebrow">Charlotte, NC</div>
+  <h1>Charlotte Musical Theater Dance Classes</h1>
+  <p>Combining singing, acting, and dance, Charlotte's musical theater classes help young performers build confidence and stage presence.</p>
 </header>
 
 <main>
   <div class="filters">
     <div class="filter-group" id="type-filters">
-      <button class="chip active" data-type="social">Social & Partner Dance</button>
-      <button class="chip" data-type="studio">Studio Dance</button>
+      <button class="chip" data-type="social">Social & Partner Dance</button>
+      <button class="chip active" data-type="studio">Studio Dance</button>
     </div>
-    <div class="filter-group" id="social-style-filters">
-      <button class="chip active" data-style="all">All styles</button>
-      <a class="chip" href="salsa.html">Salsa</a>
-      <a class="chip" href="bachata.html">Bachata</a>
-      <a class="chip" href="zouk.html">Zouk</a>
-      <a class="chip" href="kizomba.html">Kizomba</a>
-      <a class="chip" href="tango.html">Tango</a>
-      <a class="chip" href="swing.html">Swing</a>
+    <div class="filter-group" id="social-style-filters" style="display:none;">
+      <button class="chip" data-style="all">All styles</button>
+      <button class="chip" data-style="salsa">Salsa</button>
+      <button class="chip" data-style="bachata">Bachata</button>
+      <button class="chip" data-style="zouk">Zouk</button>
+      <button class="chip" data-style="kizomba">Kizomba</button>
+      <button class="chip" data-style="tango">Tango</button>
+      <button class="chip" data-style="swing">Swing</button>
     </div>
-    <div class="filter-group" id="studio-style-filters" style="display:none;">
-      <button class="chip active" data-style="all">All styles</button>
-      <a class="chip" href="hiphop.html">Hip Hop</a>
-      <a class="chip" href="ballet.html">Ballet</a>
-      <a class="chip" href="tap.html">Tap</a>
-      <a class="chip" href="jazz.html">Jazz</a>
-      <a class="chip" href="musicaltheater.html">Musical Theater</a>
+    <div class="filter-group" id="studio-style-filters">
+      <button class="chip" data-style="all">All styles</button>
+      <button class="chip" data-style="hiphop">Hip Hop</button>
+      <button class="chip" data-style="ballet">Ballet</button>
+      <button class="chip" data-style="tap">Tap</button>
+      <button class="chip" data-style="jazz">Jazz</button>
+      <button class="chip" data-style="musicaltheater">Musical Theater</button>
       <button class="chip" data-style="more">More Dances</button>
     </div>
     <div class="filter-group" id="audience-filters">
