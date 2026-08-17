@@ -1305,5 +1305,44 @@
     "link": "https://dancefevercharlotte.com/class-schedule/",
     "status": "approved",
     "audience": "kids"
+  },
+  {
+    "name": "Momentum: Bachata Beginner",
+    "styles": [
+      "bachata"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "7:00 PM - 8:00 PM",
+    "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
+    "link": "https://www.instagram.com/momentumdanceproject/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Momentum: Bachata Intermediate",
+    "styles": [
+      "bachata"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "8:00 PM - 9:00 PM",
+    "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
+    "link": "https://www.instagram.com/momentumdanceproject/",
+    "status": "approved",
+    "audience": "adult"
+  },
+  {
+    "name": "Momentum: Zouk (class + practice)",
+    "styles": [
+      "zouk"
+    ],
+    "day": "Tue",
+    "type": "recurring",
+    "time": "9:00 PM - 10:30 PM",
+    "venue": "Vista Events, 5028 South Blvd b, Charlotte, NC",
+    "link": "https://www.instagram.com/momentumdanceproject/",
+    "status": "approved",
+    "audience": "adult"
   }
 ]
