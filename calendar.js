@@ -1,13 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { initializeAppCheck, ReCaptchaV3Provider } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app-check.js";
 import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-import { firebaseConfig, recaptchaSiteKey } from "./firebase-config.js";
+import { firebaseConfig } from "./firebase-config.js";
 
+// No App Check here on purpose: firestore.rules only requires a valid App Check token on
+// writes, not reads. Calling initializeAppCheck() would make the Firestore SDK attach (and
+// wait on) a reCAPTCHA token for every read too, including this page's -- which silently
+// blocks Googlebot's own crawl, since reCAPTCHA v3 doesn't reliably resolve for automated
+// crawlers. Reads are public read-only data anyway, so there's nothing to gate here.
 const app = initializeApp(firebaseConfig);
-initializeAppCheck(app, {
-  provider: new ReCaptchaV3Provider(recaptchaSiteKey),
-  isTokenAutoRefreshEnabled: true,
-});
 const db = getFirestore(app);
 
 const STUDIO_STYLES = ["hiphop", "ballet", "tap", "jazz", "musicaltheater", "more"];
