@@ -140,6 +140,24 @@ let activeDay = "all";
 let activeAudience = "adult";
 let allEvents = [];
 
+// Style chips are real page navigations, not in-place filtering, so anything not
+// persisted here reverts to this page's own hardcoded defaults on arrival -- which
+// silently un-does an Audience choice (and the Category it drives) made on the page
+// you clicked from. activeStyle is deliberately NOT persisted: each page's own default
+// style is correct by design. Location/sortMode already persist the same way (above).
+const AUDIENCE_KEY = "cdc_audience_v1";
+function readStoredAudience(){
+  try { return sessionStorage.getItem(AUDIENCE_KEY); } catch(e){ return null; }
+}
+function writeStoredAudience(value){
+  try { sessionStorage.setItem(AUDIENCE_KEY, value); } catch(e){}
+}
+const storedAudience = readStoredAudience();
+if(storedAudience === "kids" || storedAudience === "adult"){
+  activeAudience = storedAudience;
+  if(activeAudience === "kids") activeType = "all"; // same rule applyAudience() uses below
+}
+
 // ---- Distance from the visitor's location ----
 // venues.json maps the exact `venue` string on an event to {lat, lng}, built by
 // geocode_venues.py. Fetched once; if it's still loading (or a venue has no entry),
@@ -381,6 +399,7 @@ document.getElementById("type-filters").addEventListener("click", e => {
 // alone (see the type-filters handler above for why "All" doesn't need a style reset).
 function applyAudience(value){
   activeAudience = value;
+  writeStoredAudience(activeAudience);
   if(activeAudience === "kids"){
     activeType = "all";
     syncTypeUI();
