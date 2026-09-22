@@ -12,6 +12,16 @@ const db = getFirestore(app);
 
 const STUDIO_STYLES = ["hiphop", "ballet", "tap", "jazz", "musicaltheater", "more"];
 
+// A style only needs resetting on a Category change if it can't actually appear under the
+// new Category -- e.g. "zouk" isn't a Studio style. Without this check, switching Category
+// while a compatible style was already active (Studio + "ballet", say) wiped the style
+// filter for no reason, making the two look mutually exclusive when they aren't.
+function styleCompatibleWithType(style, type){
+  if(style === "all" || type === "all") return true;
+  const isStudioStyle = STUDIO_STYLES.includes(style);
+  return type === "studio" ? isStudioStyle : !isStudioStyle;
+}
+
 // Sort weight, higher = shown first. 50 is the default tier; a lower tier (e.g. 20 for
 // Momentum listings) sinks an event to the bottom without hiding it. A future "featured"
 // tier could use 80 or 100 -- nothing else needs to change to add one.
@@ -400,11 +410,10 @@ document.getElementById("type-filters").addEventListener("click", e => {
   if(!btn) return;
   activeType = btn.dataset.type;
   writeStoredCategory(activeType);
-  // Switching between the two exclusive categories can strand an incompatible style (e.g.
-  // "zouk" isn't a Studio style), so reset it then -- but switching TO "All" has no such
-  // conflict, and resetting it there would strip the style filter on a dedicated style page
-  // (e.g. clicking "All" on ballet.html shouldn't un-filter away from Ballet).
-  if(activeType !== "all") activeStyle = "all";
+  // Only reset Style if it can't coexist with the new Category (e.g. "zouk" isn't a Studio
+  // style) -- a compatible style (Studio + "ballet") should survive the Category change,
+  // otherwise picking one chip looks like it un-picks the other.
+  if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
   syncTypeUI();
   syncStyleUI();
   render();
@@ -439,7 +448,7 @@ document.getElementById("audience-filters").addEventListener("click", e => {
 document.getElementById("type-select").addEventListener("change", e => {
   activeType = e.target.value;
   writeStoredCategory(activeType);
-  if(activeType !== "all") activeStyle = "all";
+  if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
   syncTypeUI();
   syncStyleUI();
   render();
