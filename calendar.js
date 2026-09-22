@@ -158,6 +158,23 @@ if(storedAudience === "kids" || storedAudience === "adult"){
   if(activeAudience === "kids") activeType = "all"; // same rule applyAudience() uses below
 }
 
+// Only "All" ever needs persisting here: "Social"/"Studio" are exactly what each page's
+// own default already re-derives correctly from its style, but "All" broadens beyond a
+// single page's default, and is the one Category value where both style-chip groups are
+// visible -- so clicking a chip from either one can land you on a page that would
+// otherwise narrow back to just its own side.
+const CATEGORY_KEY = "cdc_category_v1";
+function readStoredCategory(){
+  try { return sessionStorage.getItem(CATEGORY_KEY); } catch(e){ return null; }
+}
+function writeStoredCategory(value){
+  try {
+    if(value === "all") sessionStorage.setItem(CATEGORY_KEY, "all");
+    else sessionStorage.removeItem(CATEGORY_KEY);
+  } catch(e){}
+}
+if(readStoredCategory() === "all") activeType = "all";
+
 // ---- Distance from the visitor's location ----
 // venues.json maps the exact `venue` string on an event to {lat, lng}, built by
 // geocode_venues.py. Fetched once; if it's still loading (or a venue has no entry),
@@ -382,6 +399,7 @@ document.getElementById("type-filters").addEventListener("click", e => {
   const btn = e.target.closest(".chip");
   if(!btn) return;
   activeType = btn.dataset.type;
+  writeStoredCategory(activeType);
   // Switching between the two exclusive categories can strand an incompatible style (e.g.
   // "zouk" isn't a Studio style), so reset it then -- but switching TO "All" has no such
   // conflict, and resetting it there would strip the style filter on a dedicated style page
@@ -402,6 +420,7 @@ function applyAudience(value){
   writeStoredAudience(activeAudience);
   if(activeAudience === "kids"){
     activeType = "all";
+    writeStoredCategory("all"); // keeps "all" sticky even after switching back to Adult (see below)
     syncTypeUI();
     syncStyleUI();
   }
@@ -419,6 +438,7 @@ document.getElementById("audience-filters").addEventListener("click", e => {
 // these listeners keep that alternate UI wired to the same state as the chips.
 document.getElementById("type-select").addEventListener("change", e => {
   activeType = e.target.value;
+  writeStoredCategory(activeType);
   if(activeType !== "all") activeStyle = "all";
   syncTypeUI();
   syncStyleUI();
