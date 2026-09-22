@@ -364,7 +364,11 @@ document.getElementById("type-filters").addEventListener("click", e => {
   const btn = e.target.closest(".chip");
   if(!btn) return;
   activeType = btn.dataset.type;
-  activeStyle = "all";
+  // Switching between the two exclusive categories can strand an incompatible style (e.g.
+  // "zouk" isn't a Studio style), so reset it then -- but switching TO "All" has no such
+  // conflict, and resetting it there would strip the style filter on a dedicated style page
+  // (e.g. clicking "All" on ballet.html shouldn't un-filter away from Ballet).
+  if(activeType !== "all") activeStyle = "all";
   syncTypeUI();
   syncStyleUI();
   render();
@@ -373,12 +377,12 @@ document.getElementById("type-filters").addEventListener("click", e => {
 // Kids/teens content skews heavily Studio Dance, so leaving Category on "Social & Partner"
 // (the default) makes switching to Kids & Teens look nearly empty. Switching to Kids
 // nudges Category to "All" so both sides show; switching back to Adult leaves Category
-// wherever the user put it -- this is just a smarter default, not a lock.
+// wherever the user put it -- this is just a smarter default, not a lock. Style is left
+// alone (see the type-filters handler above for why "All" doesn't need a style reset).
 function applyAudience(value){
   activeAudience = value;
   if(activeAudience === "kids"){
     activeType = "all";
-    activeStyle = "all";
     syncTypeUI();
     syncStyleUI();
   }
@@ -396,7 +400,7 @@ document.getElementById("audience-filters").addEventListener("click", e => {
 // these listeners keep that alternate UI wired to the same state as the chips.
 document.getElementById("type-select").addEventListener("change", e => {
   activeType = e.target.value;
-  activeStyle = "all";
+  if(activeType !== "all") activeStyle = "all";
   syncTypeUI();
   syncStyleUI();
   render();
