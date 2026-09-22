@@ -23,6 +23,25 @@
 
 <main>
   <div class="filters">
+    <div class="near-me" id="near-me">
+      <div class="near-me-idle" id="near-me-idle">
+        <button type="button" id="use-location-btn">Use my location</button>
+        <span class="near-me-or">or</span>
+        <form id="address-form" class="address-form">
+          <input type="text" id="address-input" placeholder="Enter an address" aria-label="Address">
+          <button type="submit">Go</button>
+        </form>
+      </div>
+      <div class="near-me-active" id="near-me-active" style="display:none;">
+        <span id="near-me-label">Near you</span>
+        <div class="filter-group" id="sort-mode-filters">
+          <button class="chip" data-sort="schedule">Schedule</button>
+          <button class="chip active" data-sort="distance">Distance</button>
+        </div>
+        <button type="button" class="near-me-clear" id="near-me-clear">Clear</button>
+      </div>
+      <p class="near-me-error" id="near-me-error"></p>
+    </div>
     <div class="filter-panel">
       <div class="filter-section">
         <div class="eyebrow filter-label">Category</div>

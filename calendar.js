@@ -140,6 +140,74 @@ let activeDay = "all";
 let activeAudience = "adult";
 let allEvents = [];
 
+// ---- Distance from the visitor's location ----
+// venues.json maps the exact `venue` string on an event to {lat, lng}, built by
+// geocode_venues.py. Fetched once; if it's still loading (or a venue has no entry),
+// distance just doesn't show/sort for that event yet -- nothing else breaks.
+let venueCoords = {};
+fetch("venues.json").then(r => r.ok ? r.json() : {}).then(data => {
+  venueCoords = data;
+  if(userLocation) render();
+}).catch(() => { /* offline / missing file -- distance features just stay inactive */ });
+
+const LOCATION_KEY = "cdc_location_v1";
+let userLocation = null;     // {lat, lng} | null
+let userLocationLabel = "";  // "your location" or the typed address, for display
+let sortMode = "schedule";   // "schedule" | "distance"
+
+function readStoredLocation(){
+  try {
+    const raw = sessionStorage.getItem(LOCATION_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch(e){
+    return null;
+  }
+}
+function writeStoredLocation(){
+  try {
+    if(userLocation){
+      sessionStorage.setItem(LOCATION_KEY, JSON.stringify({ userLocation, userLocationLabel, sortMode }));
+    } else {
+      sessionStorage.removeItem(LOCATION_KEY);
+    }
+  } catch(e){
+    // sessionStorage unavailable -- fine, just skip persisting
+  }
+}
+// Restore across style-page navigations -- re-prompting for geolocation permission (or
+// making someone retype an address) on every click would be a bad experience.
+const restoredLocation = readStoredLocation();
+if(restoredLocation && restoredLocation.userLocation){
+  userLocation = restoredLocation.userLocation;
+  userLocationLabel = restoredLocation.userLocationLabel || "your location";
+  sortMode = restoredLocation.sortMode || "distance";
+}
+
+function haversineMiles(lat1, lng1, lat2, lng2){
+  const R = 3958.8; // Earth radius in miles
+  const toRad = d => d * Math.PI / 180;
+  const dLat = toRad(lat2 - lat1);
+  const dLng = toRad(lng2 - lng1);
+  const a = Math.sin(dLat / 2) ** 2 + Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) * Math.sin(dLng / 2) ** 2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+function distanceForEvent(ev){
+  if(!userLocation) return null;
+  const coords = venueCoords[ev.venue];
+  if(!coords) return null;
+  return haversineMiles(userLocation.lat, userLocation.lng, coords.lat, coords.lng);
+}
+// Same free Nominatim endpoint geocode_venues.py uses -- called on-demand for the one
+// address a visitor types, which is light, occasional usage within their policy.
+async function geocodeAddress(addr){
+  const url = `https://nominatim.openstreetmap.org/search?format=json&limit=1&countrycodes=us&q=${encodeURIComponent(addr)}`;
+  const res = await fetch(url);
+  if(!res.ok) throw new Error("Address lookup failed.");
+  const results = await res.json();
+  if(!results.length) throw new Error("Couldn't find that address.");
+  return { lat: parseFloat(results[0].lat), lng: parseFloat(results[0].lon) };
+}
+
 // Style pages are separate page loads (not a SPA), so every chip click is a full
 // navigation. Caching the fetched events in sessionStorage means hopping between
 // salsa.html -> bachata.html -> tango.html only hits Firestore once per session
@@ -203,6 +271,19 @@ function render(){
     return typeMatch && styleMatch && dayMatch && audienceMatch;
   });
 
+  // Distance sort is a separate pass on top of the priority/day/time order above -- it
+  // only kicks in once a location is set and the visitor has chosen it, and never hides
+  // anything: events with no known distance (venue not yet geocoded) sort to the end.
+  if(userLocation && sortMode === "distance"){
+    filtered.sort((a, b) => {
+      const da = distanceForEvent(a), dbb = distanceForEvent(b);
+      if(da == null && dbb == null) return 0;
+      if(da == null) return 1;
+      if(dbb == null) return -1;
+      return da - dbb;
+    });
+  }
+
   injectEventJsonLd(filtered);
 
   if(filtered.length === 0){
@@ -210,19 +291,22 @@ function render(){
     return;
   }
 
-  list.innerHTML = filtered.map(ev => `
+  list.innerHTML = filtered.map(ev => {
+    const dist = distanceForEvent(ev);
+    return `
     <div class="event">
       <div class="event-time">${ev.day || ""}<br>${ev.time || ""}</div>
       <div>
         <p class="event-name">${escapeHtml(ev.name || "")}</p>
-        <p class="event-meta">${escapeHtml(ev.venue || "")}${ev.type === "recurring" ? " · Recurring" : " · One-time"}</p>
+        <p class="event-meta">${escapeHtml(ev.venue || "")}${ev.type === "recurring" ? " · Recurring" : " · One-time"}${dist != null ? ` · ${dist.toFixed(1)} mi` : ""}</p>
         <div class="event-tags">
           ${(ev.styles||[]).map(s => `<span class="tag style-${s}">${s}</span>`).join("")}
         </div>
       </div>
       ${ev.link ? `<a class="event-link" href="${escapeAttr(ev.link)}" target="_blank" rel="noopener">Details</a>` : "<span></span>"}
     </div>
-  `).join("");
+  `;
+  }).join("");
 }
 
 function escapeHtml(str){
@@ -330,6 +414,83 @@ document.getElementById("day-nav").addEventListener("click", e => {
   activeDay = btn.dataset.day;
   render();
 });
+
+function setLocationError(msg){
+  const el = document.getElementById("near-me-error");
+  if(el) el.textContent = msg || "";
+}
+function syncNearMeUI(){
+  const idle = document.getElementById("near-me-idle");
+  const active = document.getElementById("near-me-active");
+  if(!idle || !active) return;
+  idle.style.display = userLocation ? "none" : "";
+  active.style.display = userLocation ? "" : "none";
+  if(userLocation){
+    document.getElementById("near-me-label").textContent = `Near ${userLocationLabel}`;
+    document.querySelectorAll("#sort-mode-filters .chip").forEach(b => b.classList.toggle("active", b.dataset.sort === sortMode));
+  }
+}
+function setUserLocation(loc, label){
+  userLocation = loc;
+  userLocationLabel = label;
+  sortMode = "distance";
+  setLocationError("");
+  writeStoredLocation();
+  syncNearMeUI();
+  render();
+}
+function clearUserLocation(){
+  userLocation = null;
+  userLocationLabel = "";
+  sortMode = "schedule";
+  writeStoredLocation();
+  syncNearMeUI();
+  render();
+}
+
+const useLocationBtn = document.getElementById("use-location-btn");
+if(useLocationBtn) useLocationBtn.addEventListener("click", () => {
+  if(!navigator.geolocation){
+    setLocationError("Location isn't available in this browser.");
+    return;
+  }
+  setLocationError("Locating…");
+  navigator.geolocation.getCurrentPosition(
+    pos => setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }, "your location"),
+    () => setLocationError("Couldn't get your location — check your browser's location permission."),
+    { timeout: 10000 }
+  );
+});
+
+const addressForm = document.getElementById("address-form");
+if(addressForm) addressForm.addEventListener("submit", async e => {
+  e.preventDefault();
+  const input = document.getElementById("address-input");
+  const value = input.value.trim();
+  if(!value) return;
+  setLocationError("Looking up that address…");
+  try {
+    const loc = await geocodeAddress(value);
+    setUserLocation(loc, value);
+  } catch(err){
+    setLocationError(err.message || "Couldn't find that address.");
+  }
+});
+
+const sortModeFilters = document.getElementById("sort-mode-filters");
+if(sortModeFilters) sortModeFilters.addEventListener("click", e => {
+  const btn = e.target.closest(".chip");
+  if(!btn) return;
+  sortMode = btn.dataset.sort;
+  writeStoredLocation();
+  syncNearMeUI();
+  render();
+});
+
+const nearMeClear = document.getElementById("near-me-clear");
+if(nearMeClear) nearMeClear.addEventListener("click", clearUserLocation);
+
+syncNearMeUI();
 
 loadEvents().catch(err => {
   document.getElementById("event-list").innerHTML =
