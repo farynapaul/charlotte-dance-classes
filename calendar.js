@@ -163,10 +163,7 @@ function writeStoredAudience(value){
   try { sessionStorage.setItem(AUDIENCE_KEY, value); } catch(e){}
 }
 const storedAudience = readStoredAudience();
-if(storedAudience === "kids" || storedAudience === "adult"){
-  activeAudience = storedAudience;
-  if(activeAudience === "kids") activeType = "all"; // same rule applyAudience() uses below
-}
+if(storedAudience === "kids" || storedAudience === "adult") activeAudience = storedAudience;
 
 // Only "All" ever needs persisting here: "Social"/"Studio" are exactly what each page's
 // own default already re-derives correctly from its style, but "All" broadens beyond a
@@ -184,6 +181,21 @@ function writeStoredCategory(value){
   } catch(e){}
 }
 if(readStoredCategory() === "all") activeType = "all";
+
+// ---- Keeping the filters mutually consistent ----
+// Single place for every "these two filters can conflict" rule, called after anything
+// changes Category/Style/Audience -- so a new rule only ever needs adding here once,
+// instead of being reimplemented (and potentially missed) at each call site. The
+// underlying principle: never silently override a filter's CURRENT value unless keeping
+// it would actually be wrong (a style that structurally can't exist under the active
+// Category) or defeats the one thing a softer default exists to rescue (Category stuck on
+// "Social & Partner" -- the site's sparse-for-kids default -- while Audience is Kids).
+// An already-deliberate "Studio Dance" or "All" is never touched by the Audience rule.
+function reconcileFilters(){
+  if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
+  if(activeAudience === "kids" && activeType === "social") activeType = "all";
+}
+reconcileFilters();
 
 // ---- Distance from the visitor's location ----
 // venues.json maps the exact `venue` string on an event to {lat, lng}, built by
@@ -410,29 +422,19 @@ document.getElementById("type-filters").addEventListener("click", e => {
   if(!btn) return;
   activeType = btn.dataset.type;
   writeStoredCategory(activeType);
-  // Only reset Style if it can't coexist with the new Category (e.g. "zouk" isn't a Studio
-  // style) -- a compatible style (Studio + "ballet") should survive the Category change,
-  // otherwise picking one chip looks like it un-picks the other.
-  if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
+  reconcileFilters();
   syncTypeUI();
   syncStyleUI();
   render();
 });
 
-// Kids/teens content skews heavily Studio Dance, so leaving Category on "Social & Partner"
-// (the default) makes switching to Kids & Teens look nearly empty. Switching to Kids
-// nudges Category to "All" so both sides show; switching back to Adult leaves Category
-// wherever the user put it -- this is just a smarter default, not a lock. Style is left
-// alone (see the type-filters handler above for why "All" doesn't need a style reset).
 function applyAudience(value){
   activeAudience = value;
   writeStoredAudience(activeAudience);
-  if(activeAudience === "kids"){
-    activeType = "all";
-    writeStoredCategory("all"); // keeps "all" sticky even after switching back to Adult (see below)
-    syncTypeUI();
-    syncStyleUI();
-  }
+  reconcileFilters();
+  writeStoredCategory(activeType); // persists if reconcileFilters() just broadened Category to "all"
+  syncTypeUI();
+  syncStyleUI();
   syncAudienceUI();
   render();
 }
@@ -448,7 +450,7 @@ document.getElementById("audience-filters").addEventListener("click", e => {
 document.getElementById("type-select").addEventListener("change", e => {
   activeType = e.target.value;
   writeStoredCategory(activeType);
-  if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
+  reconcileFilters();
   syncTypeUI();
   syncStyleUI();
   render();
