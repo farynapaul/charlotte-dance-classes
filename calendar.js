@@ -183,17 +183,19 @@ function writeStoredCategory(value){
 if(readStoredCategory() === "all") activeType = "all";
 
 // ---- Keeping the filters mutually consistent ----
-// Single place for every "these two filters can conflict" rule, called after anything
-// changes Category/Style/Audience -- so a new rule only ever needs adding here once,
-// instead of being reimplemented (and potentially missed) at each call site. The
-// underlying principle: never silently override a filter's CURRENT value unless keeping
-// it would actually be wrong (a style that structurally can't exist under the active
-// Category) or defeats the one thing a softer default exists to rescue (Category stuck on
-// "Social & Partner" -- the site's sparse-for-kids default -- while Audience is Kids).
-// An already-deliberate "Studio Dance" or "All" is never touched by the Audience rule.
+// Only HARD, context-independent constraints belong here: things that are wrong no matter
+// which control the user just touched. A style that can't structurally exist under the
+// active Category is one -- so this runs after every change to Category, Style, or
+// Audience, and a future hard constraint only ever needs adding in this one place.
+//
+// The Kids-audience "nudge Category to All" default is deliberately NOT a standing rule
+// here: it's a one-time suggestion applied only at the moment Audience switches to Kids
+// (see applyAudience() below), not an invariant re-enforced on every reconcile. Making it
+// a standing rule meant it fought back the instant someone picked "Social & Partner Dance"
+// while Kids was active -- Social does have real Kids content (a Salsa class, e.g.), so a
+// deliberate choice of it must be allowed to stick.
 function reconcileFilters(){
   if(!styleCompatibleWithType(activeStyle, activeType)) activeStyle = "all";
-  if(activeAudience === "kids" && activeType === "social") activeType = "all";
 }
 reconcileFilters();
 
@@ -431,8 +433,17 @@ document.getElementById("type-filters").addEventListener("click", e => {
 function applyAudience(value){
   activeAudience = value;
   writeStoredAudience(activeAudience);
+  // One-time nudge, not a standing rule: Kids/teens content skews heavily Studio Dance, so
+  // leaving Category on "Social & Partner" (the site's default) makes switching TO Kids
+  // look nearly empty. Only fires right here, at the moment Audience actually changes to
+  // Kids while Category is still sitting at that sparse default -- never re-applied by
+  // reconcileFilters() afterward, so a deliberate later click on "Social & Partner Dance"
+  // sticks instead of being fought.
+  if(activeAudience === "kids" && activeType === "social"){
+    activeType = "all";
+    writeStoredCategory("all");
+  }
   reconcileFilters();
-  writeStoredCategory(activeType); // persists if reconcileFilters() just broadened Category to "all"
   syncTypeUI();
   syncStyleUI();
   syncAudienceUI();
